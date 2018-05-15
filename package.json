@@ -1,6 +1,6 @@
 {
   "name": "react-php-components",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Emit PHP from server-rendered React componetns",
   "main": "dist/react-php-components.umd.js",
   "module": "src/index.js",
