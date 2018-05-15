@@ -1,0 +1,13 @@
+{
+  "name": "react-php-components-example",
+  "private": true,
+  "scripts": {
+    "start": "node dist",
+    "build": "jsonnull-scripts build"
+  },
+  "dependencies": {
+    "jsonnull-scripts": "^0.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+}
