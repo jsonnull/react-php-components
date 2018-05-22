@@ -4,6 +4,8 @@ import React from 'react'
 const createPhpComponent = (tag: string, phpValues: Array<any>) => {
   class PHPComponent extends React.Component {
     render() {
+      const { children = null, suppressHydrationWarning = false } = this.props
+
       if (process.env.REACT_PHP == 'php') {
         const phpContent = phpValues
           .map(value => {
@@ -15,11 +17,16 @@ const createPhpComponent = (tag: string, phpValues: Array<any>) => {
           .replace('\n', '')
 
         return React.createElement(tag, {
-          dangerouslySetInnerHTML: { __html: phpContent }
+          suppressHydrationWarning,
+          dangerouslySetInnerHTML: { __html: phpContent },
         })
       }
 
-      return React.createElement(tag, undefined, this.props.children || null)
+      return React.createElement(
+        tag,
+        { suppressHydrationWarning },
+        this.props.children || null,
+      )
     }
   }
 
